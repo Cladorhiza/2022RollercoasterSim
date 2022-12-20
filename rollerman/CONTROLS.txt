@@ -1,0 +1,5 @@
+E - toggle ride start/stop
+Q - toggle camera modes (ground - free - carriage)
+F - hold to double all speeds
+ARROW KEYS - rotate camera left/right/up/down
+W A S D - camera movement in free mode
