@@ -1,10 +1,7 @@
 #include "./../GL/glew.h"
 #include "threeDModel.h"
-#include "../Obj/OBJLoader.h"
-//#include <gl/glext.h>
 #include <math.h>
 #include "../texturehandler/texturehandler.h"
-#include "../Octree/Octree.h"
 #include "../Utilities/IntersectionTests.h"
 #include "../shaders/Shader.h"
 
@@ -675,7 +672,7 @@ void CThreeDModel::InitVBO(CShader* myShader)
 	std::cout << " initVBO " << numOfMaterials << std::endl;
 
 	m_uiNumOfVBOs = NUM_OF_VBOS_WITHOUT_TRI_IDS; //verts, normals, texcoords
-	m_uiNumOfVBOs += numOfMaterials; //plus the trilist for each of the materials used.
+	m_uiNumOfVBOs += static_cast<unsigned>(numOfMaterials); //plus the trilist for each of the materials used.
 
 	//create the VBOs
 	m_puiVBOs = new GLuint[m_uiNumOfVBOs];
