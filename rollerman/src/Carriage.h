@@ -1,9 +1,9 @@
 #pragma once
-#include "Obj/OBJLoader.h"
-#include "glm/glm.hpp"
-#include "glm\gtc\matrix_transform.hpp"
-#include "glm/gtx/rotate_vector.hpp"
-#include "3dStruct/threeDModel.h"
+#include "OBJLoader.h"
+#include "glm.hpp"
+#include "gtc\matrix_transform.hpp"
+#include "gtx/rotate_vector.hpp"
+#include "threeDModel.h"
 #include "Line.h"
 #include "InputManager.h"
 class Carriage

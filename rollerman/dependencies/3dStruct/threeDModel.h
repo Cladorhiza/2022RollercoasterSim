@@ -1,14 +1,14 @@
 #ifndef _threeDMODEL_H
 #define _threeDMODEL_H
 
-#include "./../Structures/Vector3d.h"
+#include "Vector3d.h"
 #include <vector>
 #include <tuple>
 #include <string>
 
-#include "./../GL/glew.h"
-#include "../Obj/OBJLoader.h"
-#include "../Octree/Octree.h"
+#include "glew.h"
+#include "OBJLoader.h"
+#include "Octree.h"
 
 const int NUM_OF_VERTS_IN_TRIANGLE		= 3;
 const int DIMENSION_IN_3D				= 3;

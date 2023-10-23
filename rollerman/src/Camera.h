@@ -1,15 +1,15 @@
 #pragma once
-#include "glm\glm.hpp"
-#include "glm\gtc\matrix_transform.hpp"
-#include "glm\gtc\type_ptr.hpp"
-#include "glm\gtc\matrix_inverse.hpp"
-#include "glm/gtx/rotate_vector.hpp"
-#include "glm/gtx/transform.hpp"
+#include "glm.hpp"
+#include "gtc\matrix_transform.hpp"
+#include "gtc\type_ptr.hpp"
+#include "gtc\matrix_inverse.hpp"
+#include "gtx/rotate_vector.hpp"
+#include "gtx/transform.hpp"
 #include "Sphere.h"
-#include "GL\freeglut.h"
+#include "freeglut.h"
 #include "InputManager.h"
-#include "Octree/Octree.h"
-#include "3dStruct/threeDModel.h"
+#include "Octree.h"
+#include "threeDModel.h"
 namespace Camera
 {
 	

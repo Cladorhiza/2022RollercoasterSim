@@ -19,46 +19,40 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="3dStruct\threeDModel.h" />
-    <ClInclude Include="Box\Box.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="Carriage.h" />
-    <ClInclude Include="Images\FreeImage.h" />
-    <ClInclude Include="Images\ImageLoading.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="Line.h" />
-    <ClInclude Include="LineLoader.h" />
-    <ClInclude Include="Obj\OBJLoader.h" />
-    <ClInclude Include="Octree\Octree.h" />
-    <ClInclude Include="shaders\Shader.h" />
-    <ClInclude Include="Sphere.h" />
-    <ClInclude Include="Structures\Vector3d.h" />
-    <ClInclude Include="TextureHandler\TextureHandler.h" />
-    <ClInclude Include="Utilities\IntersectionTests.h" />
+    <ClCompile Include="dependencies\3dStruct\threeDModel.cpp" />
+    <ClCompile Include="dependencies\Box\Box.cpp" />
+    <ClCompile Include="dependencies\Images\ImageLoading.cpp" />
+    <ClCompile Include="dependencies\Obj\OBJLoader.cpp" />
+    <ClCompile Include="dependencies\Octree\Octree.cpp" />
+    <ClCompile Include="dependencies\shaders\Shader.cpp" />
+    <ClCompile Include="dependencies\Structures\Vector3d.cpp" />
+    <ClCompile Include="dependencies\TextureHandler\TextureHandler.cpp" />
+    <ClCompile Include="dependencies\Utilities\IntersectionTests.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\Carriage.cpp" />
+    <ClCompile Include="src\InputManager.cpp" />
+    <ClCompile Include="src\Line.cpp" />
+    <ClCompile Include="src\LineLoader.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="3dStruct\threeDModel.cpp" />
-    <ClCompile Include="Box\Box.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="Carriage.cpp" />
-    <ClCompile Include="Images\ImageLoading.cpp" />
-    <ClCompile Include="InputManager.cpp" />
-    <ClCompile Include="Line.cpp" />
-    <ClCompile Include="LineLoader.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Obj\OBJLoader.cpp" />
-    <ClCompile Include="Octree\Octree.cpp" />
-    <ClCompile Include="shaders\Shader.cpp" />
-    <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="Structures\Vector3d.cpp" />
-    <ClCompile Include="TextureHandler\TextureHandler.cpp" />
-    <ClCompile Include="Utilities\IntersectionTests.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="glslfiles\basic.frag" />
-    <None Include="glslfiles\basic.vert" />
-    <None Include="glslfiles\basicTransformations.frag" />
-    <None Include="glslfiles\basicTransformations.vert" />
+    <ClInclude Include="dependencies\3dStruct\threeDModel.h" />
+    <ClInclude Include="dependencies\Box\Box.h" />
+    <ClInclude Include="dependencies\Images\FreeImage.h" />
+    <ClInclude Include="dependencies\Images\ImageLoading.h" />
+    <ClInclude Include="dependencies\Obj\OBJLoader.h" />
+    <ClInclude Include="dependencies\Octree\Octree.h" />
+    <ClInclude Include="dependencies\shaders\Shader.h" />
+    <ClInclude Include="dependencies\Structures\Vector3d.h" />
+    <ClInclude Include="dependencies\TextureHandler\TextureHandler.h" />
+    <ClInclude Include="dependencies\Utilities\IntersectionTests.h" />
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Carriage.h" />
+    <ClInclude Include="src\InputManager.h" />
+    <ClInclude Include="src\Line.h" />
+    <ClInclude Include="src\LineLoader.h" />
+    <ClInclude Include="src\Sphere.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{472FEE38-34C3-4DC2-8DFC-871F6F80345E}</ProjectGuid>
@@ -146,12 +140,13 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/Utilities;$(SolutionDir)dependencies/TextureHandler;$(SolutionDir)dependencies/Structures;$(SolutionDir)dependencies/shaders;$(SolutionDir)dependencies/Octree;$(SolutionDir)dependencies/Obj;$(SolutionDir)dependencies/Images;$(SolutionDir)dependencies/Box;$(SolutionDir)rollerman\src;$(SolutionDir)dependencies/3dStruct;$(SolutionDir)dependencies/GL;$(SolutionDir)dependencies/glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeImage.lib; kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImage.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Git\Rollercoaster\rollerman\dependencies\GL\lib;C:\Git\Rollercoaster\rollerman\dependencies\Images\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -183,14 +178,15 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>$(SolutionDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)dependencies/Utilities;$(SolutionDir)dependencies/TextureHandler;$(SolutionDir)dependencies/Structures;$(SolutionDir)dependencies/shaders;$(SolutionDir)dependencies/Octree;$(SolutionDir)dependencies/Obj;$(SolutionDir)dependencies/Images;$(SolutionDir)dependencies/Box;$(SolutionDir)rollerman\src;$(SolutionDir)dependencies/3dStruct;$(SolutionDir)dependencies/GL;$(SolutionDir)dependencies/glm</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>freeImage.lib; kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>FreeImage.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Git\Rollercoaster\rollerman\dependencies\GL\lib;C:\Git\Rollercoaster\rollerman\dependencies\Images\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

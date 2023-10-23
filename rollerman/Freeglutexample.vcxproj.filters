@@ -1,82 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>source</Filter>
-    </ClCompile>
-    <ClCompile Include="3dStruct\threeDModel.cpp">
-      <Filter>headers\3DStruct</Filter>
-    </ClCompile>
-    <ClCompile Include="Images\ImageLoading.cpp">
-      <Filter>headers\Images</Filter>
-    </ClCompile>
-    <ClCompile Include="Obj\OBJLoader.cpp">
-      <Filter>headers\Obj</Filter>
-    </ClCompile>
-    <ClCompile Include="Octree\Octree.cpp">
-      <Filter>headers\Octree</Filter>
-    </ClCompile>
-    <ClCompile Include="Structures\Vector3d.cpp">
-      <Filter>headers\Structures</Filter>
-    </ClCompile>
-    <ClCompile Include="TextureHandler\TextureHandler.cpp">
-      <Filter>headers\TextureHandler</Filter>
-    </ClCompile>
-    <ClCompile Include="Utilities\IntersectionTests.cpp">
-      <Filter>headers\Utilities</Filter>
-    </ClCompile>
-    <ClCompile Include="Box\Box.cpp">
-      <Filter>headers\Box</Filter>
-    </ClCompile>
-    <ClCompile Include="shaders\Shader.cpp">
-      <Filter>headers\shaders</Filter>
-    </ClCompile>
-    <ClCompile Include="Sphere.cpp" />
-    <ClCompile Include="InputManager.cpp" />
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="LineLoader.cpp" />
-    <ClCompile Include="Line.cpp" />
-    <ClCompile Include="Carriage.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="3dStruct\threeDModel.h">
-      <Filter>headers\3DStruct</Filter>
-    </ClInclude>
-    <ClInclude Include="Images\ImageLoading.h">
-      <Filter>headers\Images</Filter>
-    </ClInclude>
-    <ClInclude Include="Images\FreeImage.h">
-      <Filter>headers\Images</Filter>
-    </ClInclude>
-    <ClInclude Include="Obj\OBJLoader.h">
-      <Filter>headers\Obj</Filter>
-    </ClInclude>
-    <ClInclude Include="Octree\Octree.h">
-      <Filter>headers\Octree</Filter>
-    </ClInclude>
-    <ClInclude Include="Structures\Vector3d.h">
-      <Filter>headers\Structures</Filter>
-    </ClInclude>
-    <ClInclude Include="TextureHandler\TextureHandler.h">
-      <Filter>headers\TextureHandler</Filter>
-    </ClInclude>
-    <ClInclude Include="Utilities\IntersectionTests.h">
-      <Filter>headers\Utilities</Filter>
-    </ClInclude>
-    <ClInclude Include="Box\Box.h">
-      <Filter>headers\Box</Filter>
-    </ClInclude>
-    <ClInclude Include="shaders\Shader.h">
-      <Filter>headers\shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="Sphere.h" />
-    <ClInclude Include="InputManager.h" />
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="LineLoader.h" />
-    <ClInclude Include="Line.h" />
-    <ClInclude Include="Carriage.h" />
-  </ItemGroup>
-  <ItemGroup>
     <Filter Include="headers">
       <UniqueIdentifier>{fc837774-d0bb-4f04-9bf7-d9b28cb5f32c}</UniqueIdentifier>
     </Filter>
@@ -115,17 +39,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="glslfiles\basic.frag">
-      <Filter>headers\glslfiles</Filter>
-    </None>
-    <None Include="glslfiles\basic.vert">
-      <Filter>headers\glslfiles</Filter>
-    </None>
-    <None Include="glslfiles\basicTransformations.frag">
-      <Filter>headers\glslfiles</Filter>
-    </None>
-    <None Include="glslfiles\basicTransformations.vert">
-      <Filter>headers\glslfiles</Filter>
-    </None>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\Camera.cpp" />
+    <ClCompile Include="src\Carriage.cpp" />
+    <ClCompile Include="src\InputManager.cpp" />
+    <ClCompile Include="src\Line.cpp" />
+    <ClCompile Include="src\LineLoader.cpp" />
+    <ClCompile Include="src\Sphere.cpp" />
+    <ClCompile Include="dependencies\3dStruct\threeDModel.cpp" />
+    <ClCompile Include="dependencies\Box\Box.cpp" />
+    <ClCompile Include="dependencies\Obj\OBJLoader.cpp" />
+    <ClCompile Include="dependencies\Octree\Octree.cpp" />
+    <ClCompile Include="dependencies\shaders\Shader.cpp" />
+    <ClCompile Include="dependencies\Structures\Vector3d.cpp" />
+    <ClCompile Include="dependencies\TextureHandler\TextureHandler.cpp" />
+    <ClCompile Include="dependencies\Utilities\IntersectionTests.cpp" />
+    <ClCompile Include="dependencies\Images\ImageLoading.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Camera.h" />
+    <ClInclude Include="src\Carriage.h" />
+    <ClInclude Include="src\InputManager.h" />
+    <ClInclude Include="src\Line.h" />
+    <ClInclude Include="src\LineLoader.h" />
+    <ClInclude Include="src\Sphere.h" />
+    <ClInclude Include="dependencies\3dStruct\threeDModel.h" />
+    <ClInclude Include="dependencies\Box\Box.h" />
+    <ClInclude Include="dependencies\Obj\OBJLoader.h" />
+    <ClInclude Include="dependencies\Octree\Octree.h" />
+    <ClInclude Include="dependencies\shaders\Shader.h" />
+    <ClInclude Include="dependencies\Structures\Vector3d.h" />
+    <ClInclude Include="dependencies\TextureHandler\TextureHandler.h" />
+    <ClInclude Include="dependencies\Utilities\IntersectionTests.h" />
+    <ClInclude Include="dependencies\Images\FreeImage.h" />
+    <ClInclude Include="dependencies\Images\ImageLoading.h" />
   </ItemGroup>
 </Project>

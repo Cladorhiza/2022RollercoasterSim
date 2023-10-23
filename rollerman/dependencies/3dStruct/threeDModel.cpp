@@ -1,9 +1,9 @@
-#include "./../GL/glew.h"
+#include "glew.h"
 #include "threeDModel.h"
 #include <math.h>
-#include "../texturehandler/texturehandler.h"
-#include "../Utilities/IntersectionTests.h"
-#include "../shaders/Shader.h"
+#include "texturehandler.h"
+#include "IntersectionTests.h"
+#include "Shader.h"
 
 /*
  *	Method	: ThreeDModel

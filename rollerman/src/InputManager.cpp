@@ -1,5 +1,5 @@
 #include "InputManager.h"
-#include "GL/freeglut_std.h"
+#include "freeglut_std.h"
 #include <iostream>
 namespace InputManager {
 

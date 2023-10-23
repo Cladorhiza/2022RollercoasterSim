@@ -1,8 +1,8 @@
 #pragma once
-#include "GL/glew.h"
-#include "shaders/Shader.h"
+#include "glew.h"
+#include "Shader.h"
 #include <vector>
-#include "glm\glm.hpp"
+#include "glm.hpp"
 class Line
 {
 private:

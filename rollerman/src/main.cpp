@@ -1,19 +1,19 @@
 //OpenGL
-#include "GL\glew.h"
-#include "GL\wglew.h"
+#include "glew.h"
+#include "wglew.h"
 #pragma comment(lib, "glew32.lib")
-#include "GL\freeglut.h"
+#include "freeglut.h"
 //GLM
-#include "glm\glm.hpp"
-#include "glm\gtc\matrix_transform.hpp"
-#include "glm\gtc\type_ptr.hpp"
-#include "glm\gtc\matrix_inverse.hpp"
-#include "glm/gtx/rotate_vector.hpp"
+#include "glm.hpp"
+#include "gtc\matrix_transform.hpp"
+#include "gtc\type_ptr.hpp"
+#include "gtc\matrix_inverse.hpp"
+#include "gtx/rotate_vector.hpp"
 //Image
-#include "Images\FreeImage.h"
+#include "FreeImage.h"
 //Misc
 #include <iostream>
-#include "shaders\Shader.h"
+#include "Shader.h"
 #include "Sphere.h"
 #include "InputManager.h"
 #include "Camera.h"
@@ -21,10 +21,11 @@
 #include "LineLoader.h"
 #include "Carriage.h"
 #include <chrono>
+#include <string>
 
 //MODEL LOADING
-#include "3DStruct\threeDModel.h"
-#include "Obj\OBJLoader.h"
+#include "threeDModel.h"
+#include "OBJLoader.h"
 
 CShader* myShader;
 CShader* myBasicShader;
@@ -106,15 +107,15 @@ void init()
 	glEnable(GL_DEPTH_TEST);
 	//glEnable(GL_CULL_FACE);
 
-
+	
 	myShader = new CShader();
-	if (!myShader->CreateShaderProgram("BasicView", "glslfiles/basicTransformations.vert", "glslfiles/basicTransformations.frag"))
+	if (!myShader->CreateShaderProgram("BasicView", "res/shaders/basicTransformations.vert", "res/shaders/basicTransformations.frag"))
 	{
 		std::cout << "failed to load shader" << std::endl;
 	}
 
 	myBasicShader = new CShader();
-	if (!myBasicShader->CreateShaderProgram("Basic", "glslfiles/basic.vert", "glslfiles/basic.frag"))
+	if (!myBasicShader->CreateShaderProgram("Basic", "res/shaders/basic.vert", "res/shaders/basic.frag"))
 	{
 		std::cout << "failed to load shader" << std::endl;
 	}
@@ -123,24 +124,24 @@ void init()
 
 	glEnable(GL_TEXTURE_2D);
 
-	if (objLoader.LoadModel("TestModels/coaster6.obj"))//returns true if the model is loaded
+	if (objLoader.LoadModel("res/models/coaster.obj"))//returns true if the model is loaded
 	{
 		coaster.ConstructModelFromOBJLoader(objLoader);
 		coaster.InitVBO(myShader);
 	}
-	if (objLoader.LoadModel("TestModels/SkyBox.obj"))//returns true if the model is loaded
+	if (objLoader.LoadModel("res/models/skybox.obj"))//returns true if the model is loaded
 	{
 		skyBox.ConstructModelFromOBJLoader(objLoader);
 		skyBox.InitVBO(myShader);
 	}
-	if (objLoader.LoadModel("TestModels/landscape.obj"))//returns true if the model is loaded
+	if (objLoader.LoadModel("res/models/landscape.obj"))//returns true if the model is loaded
 	{
 		landscape.ConstructModelFromOBJLoader(objLoader);
 		landscape.InitVBO(myShader);
 	}
 
-	LineLoader::loadLine(l, "TestModels/curve4.obj");
-	carriage.init(objLoader, l.getPoints()[0], myShader, "TestModels/carriage1.obj");
+	LineLoader::loadLine(l, "res/models/curve.obj");
+	carriage.init(objLoader, l.getPoints()[0], myShader, "res/models/carriage.obj");
 }
 
 void display()

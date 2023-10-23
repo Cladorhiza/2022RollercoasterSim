@@ -1,7 +1,7 @@
 #ifndef _BOX_H
 #define _BOX_H
 
-#include "..\gl\glew.h"
+#include "glew.h"
 
 class CShader;
 

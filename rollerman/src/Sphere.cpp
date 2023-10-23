@@ -1,5 +1,5 @@
 #include "Sphere.h"
-#include "shaders\Shader.h"
+#include "Shader.h"
 
 const double PI = 3.14159265358979323846f;  
 
