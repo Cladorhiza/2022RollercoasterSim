@@ -1,7 +1,7 @@
 # 2022RollercoasterSim
 3D Rollercoaster simulation
 
-Youtube video demo: [![Rollercoastervid](https://img.youtube.com/vi/OqjBNPJcACw/0.jpg)](https://www.youtube.com/watch?v=OqjBNPJcACw)
+Youtube video demo: https://www.youtube.com/watch?v=OqjBNPJcACw
 
 Student project. Things of note:
 
